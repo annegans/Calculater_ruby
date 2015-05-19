@@ -29,11 +29,18 @@ def bmi(kg,meters)
 end
 
 def bmil(lb,meters)
-  puts (lb / (meters**2)) * 703
-  
+  puts (lb / (meters**2)) * 703  
 end
 
-puts 'pick your calculator (b)asic (a)dvanced (bm)i'
+def mortgage(principal,rate,nbpayments)
+  een = (1 + (rate**nbpayments)) / ((1 + (rate**nbpayments)) -1)
+  puts (principal * een).round(2)
+end
+
+def trip_calulator(distance,mpg,cost,speed)
+  
+
+puts 'pick your calculator (b)asic (a)dvanced (bm)i (m)ortage (t)rip calculator'
 calculator = gets.chomp
 if calculator == 'b'
   puts 'first number'
@@ -73,3 +80,21 @@ elsif calculator == 'bm'
     meters = gets.to_f
     endbmil(lb,meters)
   end
+elsif calculator == 'm'
+  puts 'principal'
+  principal = gets.to_f
+  puts 'yearly intrest rate'
+  rate = gets.to_f
+  puts 'number of payments'
+  nbpayments = gets.to_f
+  mortgage(principal,rate,nbpayments)
+elsif calculator == 't'
+  puts 'distance'
+  distance = gets.to_f
+  puts 'mpg'
+  mpg = gets.to_f
+  puts 'cost per gallon'
+  cost = gets.to_f
+  puts 'speed'
+  speed = gets.to_f
+end
